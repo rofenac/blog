@@ -1,12 +1,12 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Body from '../components/body'
+import BlogForm from '../components/blogentries'
 
 function HomePage({ className }) {
   return (
     <>
       <Header />
-      <Body className={className} />
+      <BlogForm className={className} />
       <Footer />
     </>
   )
