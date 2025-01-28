@@ -1,14 +1,14 @@
 import Header from '../components/header'
 import Footer from '../components/footer'
-import BlogForm from '../components/blogentries'
+import Body from '../components/body'
 
-function HomePage({ className }) {
+function HomePage() {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <BlogForm className={className} />
+      <Body className="flex-grow" />
       <Footer />
-    </>
+    </div>
   )
 }
 
