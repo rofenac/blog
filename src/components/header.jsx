@@ -24,20 +24,6 @@ function Header() {
             <a className="mr-5 hover:text-primary-focus">Third Link</a>
             <a className="mr-5 hover:text-primary-focus">Fourth Link</a>
           </nav>
-          <button className="btn btn-primary mt-4 md:mt-0">
-            Button
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
         </div>
       </header>
     </>
