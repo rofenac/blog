@@ -1,6 +1,6 @@
 export const blogEntries = [
   {
-    title: 'Entry 3',
+    title: 'Big Update',
     date: '28 Jan 2025',
     content: `I'm bad at making regular log entries. I'm going through my backlog, which hasn't been maintained either, and notice that a lot of it is nearing completion or is complete. That's not good if I am trying to simulate the Agile process this quarter. I need more backlog! I'll address each backlog item with updates:
     __**Page Navigation:**__
@@ -21,13 +21,13 @@ export const blogEntries = [
     80 out of 150 questions collected.`,
   },
   {
-    title: 'Entry 2',
+    title: 'Getting Cozy With the Code',
     date: '22 Jan 2025',
     content: `Not too much happened, actually. Well, I tried to make this blog fancy by trying to implement a form that I could fill out to autopopulate the blog entries. Another idea is using something like Zapier to link my commit comments to my blog entries. I tried creating the form, got frustrated, cried, and then just found some pre-made components to use for now. I'll revisit those two options later.
     As for the quiz app project. It's moving ahead. I started on all the links to all the other pages using the React router. After seeing how I am implementing the links, I'm sure there is a way to refactor them. I'm trying to identify potential refactors as they occur. I think that's in keeping with the spirit of Agile. The next big thing with the quiz app is constructing the quiz logic. That might take a while. That, along with bug squashing and bringing up the UX/UI in parallel with the code, is keeping me busy.`,
   },
   {
-    title: 'Entry 1',
+    title: 'Picking Up Some Tailwind',
     date: '16 Jan 2025',
     content: `I've learned quite a bit about TailwindCSS today. I needed to in order how to figure out how to add links to the props on each page. Also, got the React router up and running. After some head scratching and research, I successfully added a link between the home and people pages. There was much rejoicing. One thing I discovered that I thought was really interesting, was a very elegant way (until it breaks) to only render cards that have content in them. I tried ternaries, a vanilla JS function; all of them repetitive and clunky. Then I found a two liner:
     \`\`\`
