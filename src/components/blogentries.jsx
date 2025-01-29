@@ -1,5 +1,47 @@
 export const blogEntries = [
   {
+    title: 'Level 3 Skills Lab Preps, State, and Effect',
+    date: '29 Jan 2025',
+    content: `Got the Level 3 Skills video done and uploaded for lab tonight. I have already used 'useState' in my project, but I feel like I have a slightly better grasp on how it works. 'useEfect' is new to me, and I'm struggling with its function. At first glance, it looks like it waits to run a function until after an external data source executes. I haven't done research on it, but based on my experience in making the video, that's what it seems to do. I'm sure I am either wrong or I don't have a full grasp on what it does.
+    
+    As for "state", I have incorporated it into rendering the accorion effect for this blog:
+
+    \`\`\`
+    const [isExpanded, setIsExpanded] = useState(false)
+
+    ...
+
+    <button
+      className="btn btn-accent mt-4" onClick={() => setIsExpanded(!isExpanded)}>
+        {isExpanded ? 'See Less' : 'See More'}
+    </button>
+
+    \`\`\`
+    I use state to toggle the accordion being expanded or not. I actually use 'useEffect' in my quiz app project. I use it to set up the different domain quizzes. AI wrote most of it, but looking at it myself, I can start to kind of see what the logic is doing:
+
+    \`\`\`
+    useEffect(() => {
+        let filteredQuestions
+
+        if (domain === 'people') {
+          filteredQuestions = questions.filter(q => q.domain === 'People')
+        } else if (domain === 'process') {
+          filteredQuestions = questions.filter(q => q.domain === 'Process')
+        } else if (domain === 'business') {
+          filteredQuestions = questions.filter(q => q.domain === 'Business Environment')
+        } else {
+          filteredQuestions = [...questions]
+        }
+
+        setQuizQuestions(shuffleArray(filteredQuestions))
+      }, [domain])
+
+    \`\`\`
+    I believe the component reads the "domain" field in the JSON and only pulls from the requested question subset. I think '.filter' is a premade function that I'd like to learn more about.
+
+    Other than that, things are going well. I need to keep working on adding to the backlog and keeping my Trello board up to date.`,
+  },
+  {
     title: 'Big Update',
     date: '28 Jan 2025',
     content: `I'm bad at making regular log entries. I'm going through my backlog, which hasn't been maintained either, and notice that a lot of it is nearing completion or is complete. That's not good if I am trying to simulate the Agile process this quarter. I need more backlog! I'll address each backlog item with updates:
