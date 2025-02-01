@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import localStorageImg from '../assets/localStorage.jpg'
 
 function BlogTemplate({ title, date, content }) {
   // Split content into sections: paragraphs, line breaks, and code blocks
@@ -18,24 +19,35 @@ function BlogTemplate({ title, date, content }) {
   // Render sections with formatting (paragraphs, line breaks, and code blocks)
   const renderSections = (sections) => {
     return sections.map((section, index) => {
+      // Replace the [IMAGE] placeholder with an actual image
+      if (section.includes('[IMAGE]')) {
+        return (
+          <img
+            key={index}
+            src={localStorageImg}
+            alt="Illustration of Local Storage"
+            className="w-full mx-auto my-4 rounded-lg shadow-md"
+          />
+        )
+      }
+
       // Check for code blocks
       if (section.startsWith('```') && section.endsWith('```')) {
-        const code = section.slice(3, -3).trim() // Remove triple backticks and trim
-        const language = section.match(/^```(\w+)/)?.[1] || 'plaintext' // Detect language if specified
+        const code = section.slice(3, -3).trim()
         return (
           <pre
             key={index}
             className="bg-gray-900 text-gray-100 p-4 rounded whitespace-pre-wrap break-words overflow-x-auto"
           >
-            <code className={`language-${language}`}>{code}</code>
+            <code>{code}</code>
           </pre>
         )
       }
-      // Check for line breaks (single \n)
+
       if (section === '\n') {
         return <br key={index} />
       }
-      // Render as a regular paragraph with text formatting
+
       return (
         <p
           key={index}

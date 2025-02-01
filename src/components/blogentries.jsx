@@ -4,21 +4,19 @@ export const blogEntries = [
     date: '01 Feb 2025',
     content: `I implemented a leaderboard that persists between app reloads. Then I realized that since the score storage is client-side, anyone using a different device, or even a different browser on the same device, will never see another player's scores. That player will be the only player that populates the leaderboard. I think that's correct, anyway. I told the code to send the scores to a file called, "leaderboardscores.json", but I don't know where that file is. I poked around, and I still don't know where the actual data goes. It does persist through app reloads, but I have no idea where it lives. the documentation for "localStorage" says it has a limit of 10MB, but I don't plan to use more than that for now, not until we start working on backend support. According to AI, the user data is kept in the browser under the name "localStorage" with a key of "leaderboardscores.json". I am going to leave that for now, since it hints at future scalability. Upon further inquiry, AI lead me to the "Storage" section of my browser's dev tools where, in fact, there is a data object with the key value of JSON file name. This confirms my suspicion that only the local user will ever populate the leaderboard with this set up. Also a front-end only environment cannot write directly to a file on the local file system. I assume this is a security measure to prevent bad actors from writing arbitrary code willy-nilly all over your workstation.
     
-
     [IMAGE]
-
 
     And that my friends is why we use backend support!
 
-    While I was trying to get the above image to render, I learned about "trimming" a section. React can get confused when I use a placeholder like "[IMAGE]" when there is surrounding whitespace. I still don't understand why whitespace is an issue but this fixed it:
+    While I was trying to get the above image to render, I learned about "trimming" a section. React can get confused when I use a placeholder like "IMAGE" when there is surrounding whitespace. I still don't understand why whitespace is an issue but this fixed it:
     
-
     \`\`\`
-    section = section.trim(); // Trim the section
+    section = section.trim()
     \`\`\`
 
+    Except it didn't fix it because the fix somehow broke my "dangerouslyInnerHTML" formatting, which broke my paragraph spacing. So instead I started over and just imported the image into the template file, and mapped it over each blog entry. It works now, and I can easily add more images in this manner in the future.
 
-    Learned about a new function today, "createContext". `,
+    Learned about a new function today, "createContext". in order to understand what this function does, I have to know what "context" is.  From what I can discern, "context" allows you to access global data without prop drilling. So, it's like a global variable I guess? It bypasses the prop drilling process and make data available to all components that need it. I guess my quesiton is, why don't just use "context" all the time then? The answer is that it is inefficient if you just need to pass one or two props up the chain. Also, rapid changes in state could cause "context" to slow things down. The use of "context" is better suited for global data like themes, language settings, authentication, and so on.`
   },
   {
     title: 'Level 3 Skills Lab Preps, State, and Effect',
