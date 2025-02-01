@@ -1,5 +1,26 @@
 export const blogEntries = [
   {
+    title: 'Let\'s Create Some Context!',
+    date: '01 Feb 2025',
+    content: `I implemented a leaderboard that persists between app reloads. Then I realized that since the score storage is client-side, anyone using a different device, or even a different browser on the same device, will never see another player's scores. That player will be the only player that populates the leaderboard. I think that's correct, anyway. I told the code to send the scores to a file called, "leaderboardscores.json", but I don't know where that file is. I poked around, and I still don't know where the actual data goes. It does persist through app reloads, but I have no idea where it lives. the documentation for "localStorage" says it has a limit of 10MB, but I don't plan to use more than that for now, not until we start working on backend support. According to AI, the user data is kept in the browser under the name "localStorage" with a key of "leaderboardscores.json". I am going to leave that for now, since it hints at future scalability. Upon further inquiry, AI lead me to the "Storage" section of my browser's dev tools where, in fact, there is a data object with the key value of JSON file name. This confirms my suspicion that only the local user will ever populate the leaderboard with this set up. Also a front-end only environment cannot write directly to a file on the local file system. I assume this is a security measure to prevent bad actors from writing arbitrary code willy-nilly all over your workstation.
+    
+
+    [IMAGE]
+
+
+    And that my friends is why we use backend support!
+
+    While I was trying to get the above image to render, I learned about "trimming" a section. React can get confused when I use a placeholder like "[IMAGE]" when there is surrounding whitespace. I still don't understand why whitespace is an issue but this fixed it:
+    
+
+    \`\`\`
+    section = section.trim(); // Trim the section
+    \`\`\`
+
+
+    Learned about a new function today, "createContext". `,
+  },
+  {
     title: 'Level 3 Skills Lab Preps, State, and Effect',
     date: '29 Jan 2025',
     content: `Got the Level 3 Skills video done and uploaded for lab tonight. I have already used 'useState' in my project, but I feel like I have a slightly better grasp on how it works. 'useEfect' is new to me, and I'm struggling with its function. At first glance, it looks like it waits to run a function until after an external data source executes. I haven't done research on it, but based on my experience in making the video, that's what it seems to do. I'm sure I am either wrong or I don't have a full grasp on what it does.
