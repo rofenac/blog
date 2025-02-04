@@ -1,5 +1,16 @@
 export const blogEntries = [
   {
+    title: 'Refactor Day!',
+    date: '03 Feb 2025',
+    content: `Today was a snow day at school, even though I found out later that class still happened. In any case I used today as a refactor day. The majority of the refactor was meant to make the code more readable, maintainable, and scalable. It mostly involved splitting out components from each other. I split out things like svg icons from the rest of the header, basically giving every element it's own component. That's probably overkill, but at least this way if I want to extend or reuse any component, it should be easier this way.
+    
+    Another major refactor task was passing some component props as children for ease of use and to see if I could do it. It wasn't that bad, but it is easy for me to get wrapped around the axle regarding the syntax sometimes.
+    
+    I learned what "hoisted" means in JavaScript. If a variable is "hoisted" you can call it before it is defined. Non-hoisted variables must be defined before being called.
+    
+    I also learned that when ReactJS is in "Strict Mode", components run twice on a dev server, but only once in production. I disscovered this when I was console logging a component and saw that it kept running twice even though it is called once in the code. Googled it, and discovered the reason. To test this, I turned off Strict Mode and the component did indeed run only once on the dev server.`
+  },
+  {
     title: 'Let\'s Create Some Context!',
     date: '01 Feb 2025',
     content: `I implemented a leaderboard that persists between app reloads. Then I realized that since the score storage is client-side, anyone using a different device, or even a different browser on the same device, will never see another player's scores. That player will be the only player that populates the leaderboard. I think that's correct, anyway. I told the code to send the scores to a file called, "leaderboardscores.json", but I don't know where that file is. I poked around, and I still don't know where the actual data goes. It does persist through app reloads, but I have no idea where it lives. the documentation for "localStorage" says it has a limit of 10MB, but I don't plan to use more than that for now, not until we start working on backend support. According to AI, the user data is kept in the browser under the name "localStorage" with a key of "leaderboardscores.json". I am going to leave that for now, since it hints at future scalability. Upon further inquiry, AI lead me to the "Storage" section of my browser's dev tools where, in fact, there is a data object with the key value of JSON file name. This confirms my suspicion that only the local user will ever populate the leaderboard with this set up. Also a front-end only environment cannot write directly to a file on the local file system. I assume this is a security measure to prevent bad actors from writing arbitrary code willy-nilly all over your workstation.
