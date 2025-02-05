@@ -1,6 +1,23 @@
 export const blogEntries = [
   {
-    title: 'Refactor Day!',
+    title: 'Some Thoughts on the Project',
+    date: '05 Feb 2025',
+    content: `I am not a coder. It's not that I am incapabale of being one, I just don't have any experience doing it....ever. So this journey I am on is fun, interesting, and infuriating all at the same time. I like coding, but small things really bug me. For instance, I have the hardest time discerning what is a built term and what is user defined. For example:
+    
+    \`\`\`
+    const headerLinks = links.map((link, index) => (
+    <Link key={index} to={link.to} className="hover:text-purple-400">
+      {link.text}
+    </Link>
+    ))
+    \`\`\`
+
+    "links.map"...the "map" portion is a built in function. However, "{link.text}", both the "link" and "text" are user defined. This may seem like a silly thing to get blocked on, but it happens to me a lot, especially with terms I have never seen before. Another thing, I don't know the lingo around here. I get the names of things mixed up constantly. Componenets, variables, elements, and so on....What are they? Sometimes I know, other times I am not so sure. I feel like I don't have a strong foundation in coding as a whole and I'm grasping at whatever straws I can find as I muddle my way through this project.
+
+    I upgraded TailwindCSS to 4.0 and DaisyUI to 5.0beta. Supposedly this will lead to smaller file sizes and less dependencies, which is good. The website still functions so it appears I upgraded them correctly.`
+  },
+  {
+    title: 'Refactor Day',
     date: '03 Feb 2025',
     content: `Today was a snow day at school, even though I found out later that class still happened. In any case I used today as a refactor day. The majority of the refactor was meant to make the code more readable, maintainable, and scalable. It mostly involved splitting out components from each other. I split out things like svg icons from the rest of the header, basically giving every element it's own component. That's probably overkill, but at least this way if I want to extend or reuse any component, it should be easier this way.
     
