@@ -1,5 +1,64 @@
 export const blogEntries = [
   {
+    title: 'Themes, Tailwind Syntax, Grids, and UAT Feedback, Oh MY!',
+    date: '11 Feb 2025',
+    content: `Made the corrections suggested by my classmates. I made the entire card a button on both the home page and the newly populated "How the Quiz Works" page, instead of just the card title. The "all questions" quiz button is back on the home page; I had it toggled off. I made the cards on the home page darker than the background so they pop more. They already had a drop shadow applied. Also made hover over effects for the cards to make it more apparent that they are buttons. I pruned the DaisyUi themes down to the ones I find the least obnoxious (i. e. the dark themes). I installed a theme selector in the upper right corner of the header component. It uses localStorage to store a "theme" object that holds the name of the applied DaisyUI theme. I'm pleased how it turned out. I did a lot of tweaking of the TailwindCSS utility classes. I now know what this means:
+    
+    \`\`\`
+    className="group card shadow-lg bg-base-300 border border-base-300 hover:shadow-xl hover:scale-105 transition-transform duration-200"
+    \`\`\`
+    
+    It's all just CSS, man. Want to see my "actual" CSS file? Check this out:
+    
+    \`\`\`
+    @import "tailwindcss";
+
+    @plugin "daisyui" {
+      themes: light --default, dark, abyss, aqua, business, coffee, cyberpunk, dim --prefersdark, dracula, forest, halloween, luxury, night, retro, sunset, synthwave;
+    }
+    \`\`\`
+    
+    That's it. All styling is inline for me. At first I thought I was biting off more than I could chew, but now that I understand it a little better, Tailwind is pretty slick. It makes CSS a lot easier to maintain. I'm so pleased with Tailwind that I haven't even used a single MaterialUI asset. I'll probably remove the libraries if I don't use it soon.
+    
+    The major block of the week was getting a prop to properly drill down to two different components. I was trying to get the cards on the home and how-it-works page to render the way I want them to. The home page has three cards, the howto page has four. I got the cards to render, but because I was using "grid" utility classes, if I told the grid to make four columns, the howto page would render correctly but the home page's cards were shoved off to the left because apparently a grid makes the columns even if there aren't enough cards to fill the row in. I spent hours upon hours trying to figure out how to make both pages render correctly. ChatGPT sent me on an infuriating goose chase. Finally I figured it out, no thanks to generative AI. I just drill a prop to each page and manually define the CSS on those pages:
+    
+    \`\`\`
+      return (
+    <PageTemplate
+      bodyProps={{
+        pageSubTitle,
+        boxes,
+        className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-18"
+      }}
+      headerLinks={headerLinks}
+    />
+  )
+}
+\`\`\`
+and
+\`\`\`
+  return (
+    <>
+      <PageTemplate
+        bodyProps={{
+          pageFlavorText: 'So you want to be a PMP...',
+          pageTitle: 'Welcome to the Darn Fine PMP Quiz App!',
+          pageSubTitle: 'Learn about the PMP certification exam and take our fabulous quizzes!',
+          boxes,
+          showQuizButton: true,
+          className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-18"
+        }}
+        headerLinks={headerLinks}
+      />
+      <JsonReformatter />
+    </>
+  )
+}
+\`\`\`
+
+It was nice to finally figure it out but annoying it took so long for such an easy fix. I guess that's coding for you.`
+  },
+  {
     title: 'Some Thoughts on the Project',
     date: '05 Feb 2025',
     content: `I am not a coder. It's not that I am incapabale of being one, I just don't have any experience doing it....ever. So this journey I am on is fun, interesting, and infuriating all at the same time. I like coding, but small things really bug me. For instance, I have the hardest time discerning what is a built term and what is user defined. For example:
