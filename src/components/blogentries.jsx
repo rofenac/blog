@@ -1,4 +1,20 @@
+import SpinOnHover from "./SpinOnHover"
+
 export const blogEntries = [
+  {
+    title: 'GSAP Showcase',
+    date: '12 Feb 2025',
+    content: (
+      <>
+        <p className="text-lg">Here are some of the fun things I have been messing around with during our "free" week.</p>
+        <div className="pt-12">
+          <SpinOnHover />
+        </div>
+        <div className="pt-12">
+        </div>
+      </>
+    )
+  },
   {
     title: 'Themes, Tailwind Syntax, Grids, and UAT Feedback, Oh MY!',
     date: '11 Feb 2025',
