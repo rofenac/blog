@@ -1,16 +1,29 @@
-import SpinOnHover from "./SpinOnHover"
+import SpinOnHover from "../gsap/SpinOnHover"
+import SpinningText from "../gsap/SpinningText"
+import ParticleExplosion from "../gsap/ParticleExplosion"
 
 export const blogEntries = [
   {
-    title: 'GSAP Showcase',
+    title: 'Greensock Animation Platform (GSAP) Showcase',
     date: '12 Feb 2025',
     content: (
       <>
-        <p className="text-lg">Here are some of the fun things I have been messing around with during our "free" week.</p>
-        <div className="pt-12">
-          <SpinOnHover />
-        </div>
-        <div className="pt-12">
+        <div className="font-bold">
+          <p>Here are some of the fun things I have been messing around with during our "free" week. Hover over the Vite and React icons</p>
+          <div className="pt-12">
+            <SpinOnHover />
+          </div>
+          <div className="pt-12">
+            <p>Because there can never be enough spinning things:</p>
+            <SpinningText />
+          </div>
+          <div className="pt-12">
+            <p>And finally...</p>
+            <div className="pt-8">
+              <ParticleExplosion />
+            </div>
+          </div>
+          <p className="pt-12">I wanted to show off the SVGMorph plugin, but alas it is behind a paywall. So you'll have to settle for confetti. In any case, I'm glad I found this library, as you can see I am having a lot of fun with it.</p>
         </div>
       </>
     )
