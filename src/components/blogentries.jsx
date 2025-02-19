@@ -4,6 +4,15 @@ import ParticleExplosion from "../gsap/ParticleExplosion"
 
 export const blogEntries = [
   {
+    title: 'Hi, I\'m Dave, and I\'m a GSAP Addict',
+    date: '19 Feb 2025',
+    content: `This week I concentrated mostly on finishing off the GSAP animations for the domain pages along with some minor tweaks and changes. Had a bit of trouble with some of the logic, but I got it sorted. I also did a full refactor of the animations so that the React specific hook, "useGSAP" is now consistently applied across the app. ChatGPT for some reason hates the wrapper and and tries to remove it whenever it can. I have to explicitly tell it to leave it. I don't what difference it makes. That's something I'll have to dig into when I have a moment.
+    
+    The other major change this week was splitting up the leaderboard so each quiz type gets its own. Then there were some routing issues where the full set quiz wasn't populating its leaderboard. I also fixed the GSAp countdown animation so that it is applied globally to all quiz buttons.
+    
+    Coming up, I'll finish up question collection and possibly add a timer function to the quizzes. Prof. mentioned something implementing a POS system as well. That could be interesting.`
+  },
+  {
     title: 'Greensock Animation Platform (GSAP) Showcase',
     date: '12 Feb 2025',
     content: (
