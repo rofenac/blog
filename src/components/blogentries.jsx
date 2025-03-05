@@ -4,6 +4,17 @@ import ParticleExplosion from "../gsap/ParticleExplosion"
 
 export const blogEntries = [
   {
+    title: 'Hi, I\'m Dave, and I\'m a Terraform-Ansible Addict',
+    date: '03 Mar 2025',
+    content: `Prof. introduced me to Terraform and in my investigations I found Ansible, so I’ve been working on that for the last two weeks. I have gotten to the point where I can spin up a NodeJS server and a MySQL server, and configured to the point where basic user accounts, credentials and customized command prompts, timezones and hostnames are provisioned. Also a VPC is created to facilitate the two servers communicating. MySQL is installed, but not configured, on the MySQL server. NodeJS, including NPM and NVM are installed on the NodeJS server with all the latest versions. If I knew more about MySQL, I could fully configure the MySQL via Ansible, but just installing it will have to do for now.
+    
+    I was practicing the Terraform script earlier with vulnerable logon credentials. I left the servers up for about an hour and within that hour someone or somebot had compromised the server and was using it for brute forcing. I got a nastygram from Akamai saying I need to fix this ASAP. I deleted the servers. From now on I will provision cloud servers with hardened credentials.
+
+    [IMAGE2]
+    
+    As for the front end, I fixed the card border animations on the “home” and “howworks” pages. I think that is about as far as I will get before lab tonight.`
+  },
+  {
     title: 'Hi, I\'m Dave, and I\'m a GSAP Addict',
     date: '19 Feb 2025',
     content: `This week I concentrated mostly on finishing off the GSAP animations for the domain pages along with some minor tweaks and changes. Had a bit of trouble with some of the logic, but I got it sorted. I also did a full refactor of the animations so that the React specific hook, "useGSAP" is now consistently applied across the app. ChatGPT for some reason hates the wrapper and and tries to remove it whenever it can. I have to explicitly tell it to leave it. I don't what difference it makes. That's something I'll have to dig into when I have a moment.

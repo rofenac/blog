@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import localStorageImg from '../assets/localStorage.jpg'
+import nastyGram from '../assets/nastyGram.png'
 
 function BlogTemplate({ title, date, content }) {
   const [isExpanded, setIsExpanded] = useState(false)
@@ -49,6 +50,17 @@ function BlogTemplate({ title, date, content }) {
             key={index}
             src={localStorageImg}
             alt="Illustration of Local Storage"
+            className="w-full mx-auto my-4 rounded-lg shadow-md"
+          />
+        )
+      }
+
+      if (section.includes('[IMAGE2]')) {
+        return (
+          <img
+            key={index}
+            src={nastyGram}
+            alt="Linode Nastygram"
             className="w-full mx-auto my-4 rounded-lg shadow-md"
           />
         )
